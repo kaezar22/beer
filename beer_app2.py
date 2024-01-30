@@ -70,12 +70,12 @@ def where_to_drink():
     show_all_breweries = st.checkbox(f"Show all breweries in {city_filter}", value=False)
     if show_all_breweries:
         st.write(f"All breweries in **{city_filter}**")
-        st.dataframe(brewery_summary_without_types, width=600)  # Set the desired width here
+        st.dataframe(brewery_summary_without_types)  # Set the desired width here
     else:
         # Display the top 10 breweries
         st.write(f"Top 10 breweries in **{city_filter}** by Average Score")
         brewery_summary_without_types = brewery_summary_without_types.rename(columns={'Brewery': 'Brewery Name'})
-        st.dataframe(brewery_summary_without_types.head(10), width=600)  # Set the desired width here
+        st.dataframe(brewery_summary_without_types.head(10))  # Set the desired width here
     
     col3, col4 = st.columns(2)
    
@@ -101,7 +101,7 @@ def where_to_drink():
        top_style_beers = top_style_beers.rename(columns={'Beer Name (Full)': 'Beer Name', 'review_overall': 'Overall Rating', 'Brewery': 'Brewery Name'})
    
        # Show the top 5 beers of the selected style
-       st.dataframe(top_style_beers, width=600)  # Set the desired width here
+       st.dataframe(top_style_beers)  # Set the desired width here
    
     with col4:
        st.subheader(f"Top 3 Most Popular Styles in {country_filter}")
@@ -123,7 +123,7 @@ def where_to_drink():
        top_beers = top_beers.rename(columns={'Beer Name (Full)': 'Beer Name', 'review_overall': 'Overall Rating', 'Brewery': 'Brewery Name'})
    
        # Show the top 5 beers in the country
-       st.dataframe(top_beers, width=600)  # Set the desired width here
+       st.dataframe(top_beers)  # Set the desired width here
    
        # Create a variable for the top 5 beers
        top_beers_for_plot = top_beers[['Beer Name', 'Overall Rating']]
