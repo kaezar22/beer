@@ -2,3 +2,7 @@ streamlit
 pandas
 pycountry
 plotly
+numpy
+matplotlib
+scikit-learn
+fuzzywuzzy
